@@ -12,7 +12,7 @@ namespace APIProCli.Controllers
     public class ProductosController : ControllerBase
     {
         [HttpPost]
-        public void Insertar(ProductoRequestInsertar request) 
+        public void Insertar(ProductoRequestInsert request) 
         { 
             ProductoService service = new ProductoService();
 
@@ -49,7 +49,7 @@ namespace APIProCli.Controllers
         }
 
         [HttpPut]
-        public void Eliminar(ProductoRequestEliminar request) 
+        public void Eliminar(ProductoRequestDelete request) 
         { 
             ProductoService service= new ProductoService();
 

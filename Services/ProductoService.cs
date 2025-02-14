@@ -23,7 +23,7 @@ namespace Services
         {
             using (var context = new AppDbContext()) 
             { 
-                var productos = context.Producto.ToList();
+                var productos = context.Producto.Where(p=>p.Activo==true).ToList();
                 return productos;
             }
         }

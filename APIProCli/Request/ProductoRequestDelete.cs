@@ -1,6 +1,6 @@
 ﻿namespace APIProCli.Request
 {
-    public class ProductoRequestEliminar
+    public class ProductoRequestDelete
     {  
        public int Id { get; set; }
        //public bool Activo { get; set; }

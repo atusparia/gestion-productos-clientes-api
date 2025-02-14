@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace APIProCli.Request
 {
-    public class ProductoRequestInsertar
+    public class ProductoRequestInsert
     {
         public string Nombre { get; set; }
         public decimal Precio { get; set; }
