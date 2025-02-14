@@ -11,4 +11,5 @@ namespace APIProCli.Request
         public DateTime FechaCreacion { get; set; }
         public bool Activo { get; set; }
     }
+
 }

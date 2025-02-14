@@ -10,7 +10,7 @@ namespace Services
 {
     public class ProductoService
     {
-        public void Insertar(Producto producto) 
+        public void Insert(Producto producto) 
         {
             using (var context = new AppDbContext())
             { 
@@ -19,6 +19,23 @@ namespace Services
             }
         }
 
+        public List<Producto> Get() 
+        {
+            using (var context = new AppDbContext()) 
+            { 
+                var productos = context.Producto.ToList();
+                return productos;
+            }
+        }
 
+        public void Delete(Producto producto)
+        {
+            using (var context = new AppDbContext())
+            {
+                context.Producto.Attach(producto);
+                context.Entry(producto).Property(p=>p.Activo).IsModified = true;
+                context.SaveChanges();
+            }
+        }
     }
 }
