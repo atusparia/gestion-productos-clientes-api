@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Domain
 {
-    public class Clientes
+    public class Cliente
     {
         [Key]
         public int Id { get; set; }

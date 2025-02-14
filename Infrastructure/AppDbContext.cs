@@ -10,8 +10,8 @@ namespace Infrastructure
 {
     public class AppDbContext:DbContext
     {
-        public DbSet<Productos> Productos { get; set; }
-        public DbSet<Clientes> clientes { get; set; }
+        public DbSet<Producto> Producto { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
