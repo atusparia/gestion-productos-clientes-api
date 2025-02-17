@@ -39,6 +39,7 @@ namespace APIProCli.Controllers
 
             var response = clientes.Select(x => new ClienteResponseGet
             {
+                Id = x.Id,
                 Nombre = x.Nombre,
                 Correo= x.Correo,
                 Telefono = x.Telefono,

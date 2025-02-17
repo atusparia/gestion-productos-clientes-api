@@ -15,16 +15,16 @@ namespace Infrastructure
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            /*
             optionsBuilder.UseSqlServer("data source = SRVMIO;" +
                     "initial catalog=ProCliDB; User Id=usMio; Pwd=Rcm123456;" +
                     "TrustServerCertificate=true");
+            */
             
-            /*
             optionsBuilder.UseSqlServer("data source = UEI11B;" +
                     "initial catalog=ProCliDB; User Id=sa; Pwd=Hrm260381;" +
                     "TrustServerCertificate=true");
-            */
+            
         }
     }
 }

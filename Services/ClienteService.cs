@@ -14,6 +14,8 @@ namespace Services
         {
             using (var context = new AppDbContext())
             {
+                cliente.Activo = true; //Revisar
+                cliente.FechaCreacion = DateTime.Now;
                 context.Cliente.Add(cliente);
                 context.SaveChanges();
             }
