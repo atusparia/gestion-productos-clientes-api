@@ -27,9 +27,9 @@ namespace APIProCli.Controllers
 
             service.Insert(domain);
         }
-
+        /*
         [HttpGet]
-        public List<ProductoResponseGet> Listar() 
+        public List<ProductoResponseGet> Listar0() 
         {
             ProductoService service = new ProductoService();
 
@@ -47,7 +47,29 @@ namespace APIProCli.Controllers
 
             return response;
         }
+        */
 
+        [HttpGet]
+        public List<ProductoResponseGet> Listar(string? filter)
+        {
+            ProductoService service = new ProductoService();
+
+            //service.GetByFilter(filtro);
+
+            var productos = service.GetByFilter(filter);
+
+            var response = productos.Select(x => new ProductoResponseGet
+            {
+                Id = x.Id,
+                Nombre = x.Nombre,
+                Precio = x.Precio,
+                Stock = x.Stock,
+                FechaCreacion = x.FechaCreacion,
+            }).ToList();
+
+            return response;
+        }
+        
         [HttpPut]
         public void Eliminar(ProductoRequestDelete request) 
         { 
