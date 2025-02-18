@@ -29,13 +29,11 @@ namespace APIProCli.Controllers
         }
 
         [HttpGet]
-        public List<ClienteResponseGet> Listar()
+        public List<ClienteResponseGet> Listar(string? filter)
         {
             ClienteService service = new ClienteService();
 
-            service.Get();
-
-            var clientes = service.Get();
+            var clientes = service.GetByFilter(filter);
 
             var response = clientes.Select(x => new ClienteResponseGet
             {

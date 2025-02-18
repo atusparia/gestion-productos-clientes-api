@@ -1,5 +1,6 @@
 ﻿using Domain;
 using Infrastructure;
+using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,21 @@ namespace Services
             {
                 var clientes = context.Cliente.Where(p => p.Activo == true).ToList();
                 return clientes;
+            }
+        }
+
+        public List<Cliente> GetByFilter(string filter)
+        {
+            using (var context = new AppDbContext())
+            {
+                var query = context.Cliente.Where(x => x.Activo == true);
+
+                if (!filter.IsNullOrEmpty())
+                {
+                    query = query.Where(x => x.Nombre.Contains(filter));
+                }
+
+                return query.ToList();
             }
         }
 
